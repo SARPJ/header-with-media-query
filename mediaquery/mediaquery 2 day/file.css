@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color: black;
+  color: white;
+}
+
+header > nav {
+  display: flex;
+  height: 120px;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  align-items: center;
+  text-decoration: none;
+}
+header > nav > a > img {
+  width: 100px;
+  height: 100px;
+}
+
+header > nav > .box {
+  height: 50px;
+  width: 50px;
+
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+header > nav > .box > .burgerline {
+  height: 5px;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  top: calc(50% - 2.5px);
+  left: 0px;
+}
+header > nav > .box > .burgerline::before {
+  content: "";
+  height: 100%;
+  width: 50%;
+  background-color: rgb(250, 246, 246);
+  position: absolute;
+  top: -12px;
+  left: 0px;
+  transition: all 0.3s;
+}
+header > nav > .box:hover > .burgerline::before {
+  width: 100%;
+}
+
+header > nav > .box > .burgerline::after {
+  content: "";
+  height: 100%;
+  width: 50%;
+  background-color: rgb(252, 247, 247);
+  position: absolute;
+  top: 12px;
+  right: 0px;
+  transition: all 0.3s;
+}
+header > nav > .box:hover > .burgerline::after {
+  width: 100%;
+}
+header > nav > ul {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  font-size: 28px;
+}
+
+header > nav > ul > li > a {
+  padding: 40px 20px;
+  color: white;
+  text-decoration: none;
+}
+header > nav > ul > li > a:hover {
+  background-color: orchid;
+  color: black;
+}
+
+@media (max-width: 1350px) {
+  header > nav > .box {
+    display: block;
+  }
+  header > nav > ul > li {
+    display: none;
+  }
+  header > nav {
+    justify-content: space-around;
+    gap: none;
+  }
+}
